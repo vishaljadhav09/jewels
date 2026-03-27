@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #FFF8E7;
+    font-family: 'Hind', sans-serif;
+    color: #3d1a0a;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-maroon-500 text-gold-200 font-semibold px-6 py-3 rounded-sm hover:bg-maroon-700 transition-all duration-300 tracking-wider uppercase text-sm;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 text-maroon-900 font-semibold px-6 py-3 rounded-sm hover:bg-gold-400 transition-all duration-300 tracking-wider uppercase text-sm;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-maroon-600 text-center relative;
+  }
+
+  .rangoli-divider {
+    @apply flex items-center justify-center gap-3 my-4;
+  }
+
+  .card-jewelry {
+    @apply bg-white border border-gold-200 rounded-sm overflow-hidden hover:shadow-xl hover:shadow-gold-200/40 transition-all duration-500;
+  }
+
+  .tag-badge {
+    @apply text-xs font-semibold px-2 py-1 rounded-sm;
+  }
+}
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 2px 2px 4px rgba(212, 146, 28, 0.3);
+  }
+
+  .border-mandala {
+    border-image: linear-gradient(45deg, #D4921C, #8B0000, #FF9933, #D4921C) 1;
+  }
+
+  .bg-festive-gradient {
+    background: linear-gradient(135deg, #8B0000 0%, #6b0000 50%, #4d0000 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #f5de95 0%, #e9ad2d 50%, #b97116 100%);
+  }
+
+  .shimmer-gold {
+    background: linear-gradient(90deg, #f5de95 25%, #efc558 50%, #f5de95 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8E7;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4921C;
+  border-radius: 3px;
+}
+
+/* Mandala decorative pattern */
+.mandala-bg {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(212, 146, 28, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4921C' fill-opacity='0.04'%3E%3Cpath d='M30 0 L31 29 L60 30 L31 31 L30 60 L29 31 L0 30 L29 29 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Devanagari text */
+.font-marathi {
+  font-family: 'Noto Serif Devanagari', serif;
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+  background: linear-gradient(180deg, #4d0000 0%, #8B0000 100%);
+}
+
+/* Toast customization */
+.toast-gold {
+  background: #FFF8E7 !important;
+  border: 1px solid #D4921C !important;
+  color: #3d1a0a !important;
+}
